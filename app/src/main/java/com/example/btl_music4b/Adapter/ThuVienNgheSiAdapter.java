@@ -8,12 +8,14 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageButton;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.chauthai.swipereveallayout.ViewBinderHelper;
 import com.example.btl_music4b.Activity.DanhsachbaihatActivity;
 import com.example.btl_music4b.Model.NgheSi;
 import com.example.btl_music4b.Model.Playlist;
@@ -26,6 +28,7 @@ public class ThuVienNgheSiAdapter extends RecyclerView.Adapter<ThuVienNgheSiAdap
 
     Context context;
     ArrayList<NgheSi> mangnghesi;
+    private ViewBinderHelper viewBinderHelper = new ViewBinderHelper();
     View view;
 
     public ThuVienNgheSiAdapter(Context context, ArrayList<NgheSi> mangnghesi) {
@@ -42,7 +45,7 @@ public class ThuVienNgheSiAdapter extends RecyclerView.Adapter<ThuVienNgheSiAdap
     }
 
     @Override
-    public void onBindViewHolder(@NonNull ViewHolder holder,final int position) {
+    public void onBindViewHolder(@NonNull final ViewHolder holder, final int position) {
         NgheSi ngheSi = mangnghesi.get(position);
         holder.txttennghesi.setText(ngheSi.getTenNgheSi());
         Picasso.with(context).load(ngheSi.getHinhNgheSi()).into(holder.imgnghesi);
@@ -54,21 +57,35 @@ public class ThuVienNgheSiAdapter extends RecyclerView.Adapter<ThuVienNgheSiAdap
                 context.startActivity(intent);
             }
         });
+        holder.layout_delete.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                mangnghesi.remove(holder.getAdapterPosition());
+                notifyItemRemoved(holder.getAdapterPosition());
+            }
+        });
     }
 
 
     @Override
     public int getItemCount() {
-        return mangnghesi.size();
+        if(mangnghesi != null) {
+            return mangnghesi.size();
+        }
+            return 0;
+
     }
 
     public class ViewHolder extends RecyclerView.ViewHolder {
         de.hdodenhof.circleimageview.CircleImageView imgnghesi;
         TextView txttennghesi;
+        private LinearLayout layout_delete;
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
             imgnghesi = itemView.findViewById(R.id.imageviewthuviennghesi);
             txttennghesi = itemView.findViewById(R.id.textviewthuviennghesi);
+            layout_delete = itemView.findViewById(R.id.layout_delete);
+
         }
     }
 

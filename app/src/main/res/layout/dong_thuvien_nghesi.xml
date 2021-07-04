@@ -1,34 +1,51 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+<com.chauthai.swipereveallayout.SwipeRevealLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_gravity="center"
     android:layout_marginLeft="16dp"
-    android:layout_marginBottom="25dp">
+    android:layout_marginBottom="25dp"
+    app:mode="same_level"
+    app:dragEdge="right">
+
 
     <LinearLayout
-        android:orientation="horizontal"
-        android:id="@+id/linearcarviewthuviennghesi"
-        android:background="#000"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content">
+        android:id="@+id/layout_delete"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+        <TextView
+            android:layout_width="115dp"
+            android:layout_height="115dp"
+            android:background="@color/av_red"
+            android:text="Delete"
+            android:gravity="center"
+            android:layout_marginBottom="50dp"
+            >
 
+        </TextView>
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal">
         <de.hdodenhof.circleimageview.CircleImageView
             app:civ_border_color="#FFFFFF"
             app:civ_border_width="2dp"
             android:id="@+id/imageviewthuviennghesi"
             android:src="@drawable/imgitem"
             android:layout_centerInParent="true"
-            android:layout_width="115dp"
+            android:layout_width="215dp"
             android:layout_height="115dp"/>
 
         <TextView
-            android:layout_width="150dp"
+            android:layout_width="200dp"
             android:layout_height="wrap_content"
             android:id="@+id/textviewthuviennghesi"
             android:layout_marginTop="40dp"
-            android:layout_marginLeft="20dp"
+            android:layout_marginLeft="10dp"
             android:ellipsize="end"
             android:fontFamily="@font/arimo_bold"
             android:maxWidth="125dp"
@@ -39,4 +56,4 @@
 
     </LinearLayout>
 
-</androidx.cardview.widget.CardView>
+</com.chauthai.swipereveallayout.SwipeRevealLayout>

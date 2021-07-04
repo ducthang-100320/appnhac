@@ -11,7 +11,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".Activity.HomeActivity"></activity>
+        <activity android:name=".AddBaiHat"></activity>
+        <activity android:name=".Activity.HomeActivity" />
         <activity android:name=".Activity.PlayNhacActivity" />
         <activity android:name=".Activity.DanhsachbaihatActivity" />
         <activity android:name=".Activity.MainActivity">
@@ -21,11 +22,6 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
-<!--        <meta-data-->
-<!--            android:name="preloaded_fonts"-->
-<!--            android:resource="@array/preloaded_fonts" -->
-<!--            />-->
     </application>
 
 </manifest>
