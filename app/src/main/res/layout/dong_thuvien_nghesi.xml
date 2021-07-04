@@ -1,43 +1,33 @@
 <?xml version="1.0" encoding="utf-8"?>
-<com.chauthai.swipereveallayout.SwipeRevealLayout
+<androidx.constraintlayout.widget.ConstraintLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_gravity="center"
     android:layout_marginLeft="16dp"
     android:layout_marginBottom="25dp"
+    >
+
+<com.chauthai.swipereveallayout.SwipeRevealLayout
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    tools:ignore="MissingConstraints"
     app:mode="same_level"
     app:dragEdge="right">
-
-
-    <LinearLayout
-        android:id="@+id/layout_delete"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical">
-        <TextView
-            android:layout_width="115dp"
-            android:layout_height="115dp"
-            android:background="@color/av_red"
-            android:text="Delete"
-            android:gravity="center"
-            android:layout_marginBottom="50dp"
-            >
-
-        </TextView>
-    </LinearLayout>
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="horizontal">
+
         <de.hdodenhof.circleimageview.CircleImageView
             app:civ_border_color="#FFFFFF"
             app:civ_border_width="2dp"
             android:id="@+id/imageviewthuviennghesi"
             android:src="@drawable/imgitem"
             android:layout_centerInParent="true"
-            android:layout_width="215dp"
+            android:layout_width="115dp"
             android:layout_height="115dp"/>
 
         <TextView
@@ -53,7 +43,25 @@
             android:text="textview"
             android:textColor="#B6B6B6"
             android:textSize="18sp"/>
+        <LinearLayout
+            android:id="@+id/layout_delete"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+            <TextView
+                android:layout_width="115dp"
+                android:layout_height="115dp"
+                android:background="@color/av_red"
+                android:text="Delete"
+                android:gravity="center"
+                android:layout_marginBottom="50dp"
+                >
+
+            </TextView>
+        </LinearLayout>
 
     </LinearLayout>
-
 </com.chauthai.swipereveallayout.SwipeRevealLayout>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
