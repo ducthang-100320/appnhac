@@ -17,6 +17,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.chauthai.swipereveallayout.ViewBinderHelper;
 import com.example.btl_music4b.Activity.DanhsachbaihatActivity;
+import com.example.btl_music4b.Activity.PlayNhacActivity;
 import com.example.btl_music4b.Model.NgheSi;
 import com.example.btl_music4b.Model.Playlist;
 import com.example.btl_music4b.R;
@@ -28,7 +29,6 @@ public class ThuVienNgheSiAdapter extends RecyclerView.Adapter<ThuVienNgheSiAdap
 
     Context context;
     ArrayList<NgheSi> mangnghesi;
-    private ViewBinderHelper viewBinderHelper = new ViewBinderHelper();
     View view;
 
     public ThuVienNgheSiAdapter(Context context, ArrayList<NgheSi> mangnghesi) {

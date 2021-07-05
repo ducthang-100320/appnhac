@@ -7,15 +7,10 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_gravity="center"
     android:layout_marginLeft="16dp"
-    android:layout_marginBottom="25dp"
-    >
+    android:layout_marginBottom="25dp">
 
-<com.chauthai.swipereveallayout.SwipeRevealLayout
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    tools:ignore="MissingConstraints"
-    app:mode="same_level"
-    app:dragEdge="right">
+
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -27,7 +22,7 @@
             android:id="@+id/imageviewthuviennghesi"
             android:src="@drawable/imgitem"
             android:layout_centerInParent="true"
-            android:layout_width="115dp"
+            android:layout_width="155dp"
             android:layout_height="115dp"/>
 
         <TextView
@@ -43,25 +38,29 @@
             android:text="textview"
             android:textColor="#B6B6B6"
             android:textSize="18sp"/>
+
         <LinearLayout
             android:id="@+id/layout_delete"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:background="#E9EDE9"
+            android:layout_marginTop="40dp"
+            android:layout_marginLeft="30dp"
+            android:layout_marginBottom="50dp"
             android:orientation="vertical">
-            <TextView
-                android:layout_width="115dp"
-                android:layout_height="115dp"
-                android:background="@color/av_red"
-                android:text="Delete"
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/baseline_delete_black_48"
                 android:gravity="center"
-                android:layout_marginBottom="50dp"
+
                 >
 
-            </TextView>
+            </ImageView>
         </LinearLayout>
 
     </LinearLayout>
-</com.chauthai.swipereveallayout.SwipeRevealLayout>
+
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
