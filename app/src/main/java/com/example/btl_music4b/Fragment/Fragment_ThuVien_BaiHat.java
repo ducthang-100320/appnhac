@@ -41,7 +41,6 @@ import retrofit2.Call;
 import retrofit2.Callback;
 
 public class Fragment_ThuVien_BaiHat extends Fragment {
-    private HomeActivity context;
     Context context;
     View view;
     ArrayList<ThuVienBaiHat> thuVienBaiHatList;
