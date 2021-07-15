@@ -11,7 +11,6 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".AddBaiHat"></activity>
         <activity android:name=".Activity.HomeActivity" />
         <activity android:name=".Activity.PlayNhacActivity" />
         <activity android:name=".Activity.DanhsachbaihatActivity" />

@@ -7,6 +7,7 @@ import com.example.btl_music4b.Model.NgheSi;
 import com.example.btl_music4b.Model.PhoBien;
 import com.example.btl_music4b.Model.Playlist;
 import com.example.btl_music4b.Model.ThinhHanh;
+import com.example.btl_music4b.Model.ThuVienBaiHat;
 
 import java.util.List;
 
@@ -33,6 +34,9 @@ public interface Dataservice {
     Call<List<ChuDe>> GetChuDeCurrent();
     @GET("getDataMusic.php")
     Call<List<BaiHat>> GetDanhsachbaihat();
+
+    @GET("thuvienbaihat.php")
+    Call<List<ThuVienBaiHat>> GetThuVienbaihat();
 
     @GET("bangxephangcurrent.php")
     Call<List<BangXepHang>> GetBangXepHangCurrent();

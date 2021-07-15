@@ -21,6 +21,8 @@ import android.widget.Toast;
 import android.widget.Toolbar;
 
 import com.example.btl_music4b.Adapter.DanhsachbaihatAdapter;
+import com.example.btl_music4b.Adapter.ThuVienBaiHatAdapter;
+import com.example.btl_music4b.Fragment.Fragment_ThuVien_BaiHat;
 import com.example.btl_music4b.Model.BaiHat;
 import com.example.btl_music4b.Model.BangXepHang;
 import com.example.btl_music4b.Model.ChuDe;
@@ -28,6 +30,7 @@ import com.example.btl_music4b.Model.NgheSi;
 import com.example.btl_music4b.Model.PhoBien;
 import com.example.btl_music4b.Model.Playlist;
 import com.example.btl_music4b.Model.ThinhHanh;
+import com.example.btl_music4b.Model.ThuVienBaiHat;
 import com.example.btl_music4b.R;
 import com.example.btl_music4b.Service.APIService;
 import com.example.btl_music4b.Service.Dataservice;
@@ -58,9 +61,13 @@ public class DanhsachbaihatActivity extends AppCompatActivity {
     ThinhHanh thinhHanh = null;
     ChuDe chuDe = null;
     BangXepHang bangXepHang = null;
+    ThuVienBaiHat thuVienBaiHat = null;
     ImageView imgdanhsachcakhuc;
     ArrayList<BaiHat> mangbaihat;
+    ArrayList<ThuVienBaiHat> thuvienbaihat;
+
     DanhsachbaihatAdapter danhsachbaihatAdapter;
+    ThuVienBaiHatAdapter thuVienBaiHatAdapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -107,6 +114,12 @@ public class DanhsachbaihatActivity extends AppCompatActivity {
             txtcollapsing.setText(bangXepHang.getTenBangXepHang());
             getSupportActionBar().setTitle(bangXepHang.getTenBangXepHang());
         }
+//        if (thuVienBaiHat != null && !thuVienBaiHat.equals("")){
+//            setValueInView(thuVienBaiHat.getTenBaiHat(), thuVienBaiHat.getHinhBaiHat());
+//            GetDataThuVien();
+//            txtcollapsing.setText(thuVienBaiHat.getTenBaiHat());
+//            getSupportActionBar().setTitle(thuVienBaiHat.getTenBaiHat());
+//        }
 
         floatActionButtonClick();
 
@@ -199,6 +212,24 @@ public class DanhsachbaihatActivity extends AppCompatActivity {
             }
         });
     }
+//    private void GetDataThuVien() {
+//        Dataservice dataservice = APIService.getService();
+//        Call<List<ThuVienBaiHat>> callback = dataservice.GetThuVienbaihat();
+//        callback.enqueue(new Callback<List<ThuVienBaiHat>>() {
+//            @Override
+//            public void onResponse(Call<List<ThuVienBaiHat>> call, Response<List<ThuVienBaiHat>> response) {
+//                thuvienbaihat = (ArrayList<ThuVienBaiHat>) response.body();
+//                thuVienBaiHatAdapter = new ThuVienBaiHatAdapter(DanhsachbaihatActivity.this, thuvienbaihat);
+//                recyclerViewdanhsachbaihat.setLayoutManager(new LinearLayoutManager(DanhsachbaihatActivity.this));
+//                recyclerViewdanhsachbaihat.setAdapter(thuVienBaiHatAdapter);
+//            }
+//
+//            @Override
+//            public void onFailure(Call<List<ThuVienBaiHat>> call, Throwable t) {
+//
+//            }
+//        });
+//    }
     private void GetDataPhoBien(String id) {
         Dataservice dataservice = APIService.getService();
         Call<List<BaiHat>> callback = dataservice.GetDanhsachbaihatphobien(id);
@@ -235,6 +266,7 @@ public class DanhsachbaihatActivity extends AppCompatActivity {
             }
         });
     }
+
     private void GetDanhsachbaihat(String id) {
         Dataservice dataservice = APIService.getService();
         Call<List<BaiHat>> callback = dataservice.GetDanhsachbaihat(id);
@@ -294,6 +326,9 @@ public class DanhsachbaihatActivity extends AppCompatActivity {
             }else
             if (intent.hasExtra("intentbangxephang")){
                 bangXepHang = (BangXepHang) intent.getSerializableExtra("intentbangxephang");
+            }
+            if (intent.hasExtra("intentthuvien")){
+                thuVienBaiHat = (ThuVienBaiHat) intent.getSerializableExtra("intentthuvien");
             }
         }
     }
