@@ -54,4 +54,5 @@ public class HomeActivity extends AppCompatActivity {
         viewPager = findViewById(R.id.myViewPager);
     }
 
+
 }

@@ -1,5 +1,7 @@
 package com.example.btl_music4b.Fragment;
 
+import android.content.Context;
+import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.util.Log;
@@ -9,6 +11,7 @@ import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -21,6 +24,12 @@ import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.android.volley.AuthFailureError;
+import com.android.volley.Request;
+import com.android.volley.RequestQueue;
+import com.android.volley.VolleyError;
+import com.android.volley.toolbox.StringRequest;
+import com.android.volley.toolbox.Volley;
 import com.example.btl_music4b.Activity.MainActivity;
 import com.example.btl_music4b.Adapter.TimKiemAdapter;
 import com.example.btl_music4b.Model.BaiHat;
@@ -29,13 +38,16 @@ import com.example.btl_music4b.Service.APIService;
 import com.example.btl_music4b.Service.Dataservice;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
 public class Fragment_Tim_Kiem extends Fragment {
+    Context context;
 
     View view;
     androidx.appcompat.widget.Toolbar toolbar;
@@ -104,5 +116,61 @@ public class Fragment_Tim_Kiem extends Fragment {
             }
         });
     }
+//    public  void  addItem(View v){
+//        String TenBaiHat = edtHoTen.getText().toString().trim();
+//        String HinhBaiHat = edtNgaySinh.getText().toString().trim();
+//        String LinkBaiHat = edtDiaChi.getText().toString().trim();
+//
+//        if(TenBaiHat.equals("")||HinhBaiHat.equals("")||LinkBaiHat.equals("")){
+//            Toast.makeText(context, "Nhập đầy đủ thông tin", Toast.LENGTH_SHORT).show();
+//            if(TenBaiHat.equals("")){
+//                edtHoTen.requestFocus();
+//            }
+//            else if(HinhBaiHat.equals("")){
+//                edtNgaySinh.requestFocus();
+//            }else {
+//                edtDiaChi.requestFocus();
+//            }
+//        }
+//        else {
+//            insertStudent("https://appnhacdinhcao.000webhostapp.com/Server/insertthuvienbaihat.php");
+//        }
+//    }
+
+//    private void insertStudent(String url) {
+//        RequestQueue requestQueue = Volley.newRequestQueue(context);
+//        StringRequest stringRequest = new StringRequest(Request.Method.POST, url,
+//                new com.android.volley.Response.Listener<String>() {
+//                    @Override
+//                    public void onResponse(String response) {
+//                        if (response.equals("Success")){
+//                            Toast.makeText(context, ""+response+"Thêm mới thành công", Toast.LENGTH_SHORT).show();
+//
+//
+//                        }
+//                        else{
+//                            Toast.makeText(context, response+"Thêm thất bại", Toast.LENGTH_SHORT).show();
+//                        }
+//
+//                    }
+//                },
+//                new com.android.volley.Response.ErrorListener() {
+//                    @Override
+//                    public void onErrorResponse(VolleyError error) {
+//                        Toast.makeText(context, error+"Thêm thất bại", Toast.LENGTH_SHORT).show();
+//
+//                    }
+//                }
+//        ) {
+//
+//            @Override
+//            protected Map<String, String> getParams() throws AuthFailureError {
+//                Map<String,String> map = new HashMap<>();
+//
+//                return map;
+//            }
+//        };
+//        requestQueue.add(stringRequest);
+//    }
 
 }
