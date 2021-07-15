@@ -3,7 +3,6 @@ package com.example.btl_music4b.Fragment;
 import android.content.Context;
 import android.os.Bundle;
 import android.view.LayoutInflater;
-import android.view.Menu;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Toast;
@@ -17,16 +16,21 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.android.volley.AuthFailureError;
 import com.android.volley.Request;
 import com.android.volley.RequestQueue;
+import com.android.volley.Response;
 import com.android.volley.VolleyError;
+import com.android.volley.toolbox.JsonArrayRequest;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
-import com.example.btl_music4b.Activity.MainActivity;
+import com.example.btl_music4b.Activity.HomeActivity;
 import com.example.btl_music4b.Adapter.ThuVienBaiHatAdapter;
-import com.example.btl_music4b.Model.BaiHat;
 import com.example.btl_music4b.Model.ThuVienBaiHat;
 import com.example.btl_music4b.R;
 import com.example.btl_music4b.Service.APIService;
 import com.example.btl_music4b.Service.Dataservice;
+
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -35,13 +39,15 @@ import java.util.Map;
 
 import retrofit2.Call;
 import retrofit2.Callback;
-import retrofit2.Response;
 
 public class Fragment_ThuVien_BaiHat extends Fragment {
+    private HomeActivity context;
     Context context;
     View view;
+    ArrayList<ThuVienBaiHat> thuVienBaiHatList;
     ThuVienBaiHatAdapter thuVienBaiHatAdapter;
     RecyclerView recyclerviewnthuvienbaihat;
+
 
 
 

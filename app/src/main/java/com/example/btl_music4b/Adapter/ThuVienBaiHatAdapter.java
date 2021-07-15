@@ -13,11 +13,8 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.example.btl_music4b.Activity.DanhsachbaihatActivity;
-import com.example.btl_music4b.Activity.MainActivity;
 import com.example.btl_music4b.Activity.PlayNhacActivity;
 import com.example.btl_music4b.Fragment.Fragment_ThuVien_BaiHat;
-import com.example.btl_music4b.Model.BaiHat;
 import com.example.btl_music4b.Model.ThuVienBaiHat;
 import com.example.btl_music4b.R;
 import com.squareup.picasso.Picasso;
@@ -25,10 +22,11 @@ import com.squareup.picasso.Picasso;
 import java.util.ArrayList;
 
 public class ThuVienBaiHatAdapter extends RecyclerView.Adapter<ThuVienBaiHatAdapter.ViewHolder> {
-    private Fragment_ThuVien_BaiHat thuvien = new Fragment_ThuVien_BaiHat();
+    private Fragment_ThuVien_BaiHat thuvien;
     Context context;
     ArrayList<ThuVienBaiHat> thuvienbaihat;
     View view;
+
 
     public ThuVienBaiHatAdapter(Context context, ArrayList<ThuVienBaiHat> thuvienbaihat) {
         this.context = context;
@@ -36,12 +34,7 @@ public class ThuVienBaiHatAdapter extends RecyclerView.Adapter<ThuVienBaiHatAdap
 
     }
 
-//    public ThuVienBaiHatAdapter(Fragment_ThuVien_BaiHat thuvien, Context context, ArrayList<ThuVienBaiHat> thuvienbaihat, View view) {
-//        this.thuvien = thuvien;
-//        this.context = context;
-//        this.thuvienbaihat = thuvienbaihat;
-//        this.view = view;
-//    }
+
 
     @NonNull
     @Override
