@@ -14,8 +14,6 @@ import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
-
-import com.chauthai.swipereveallayout.ViewBinderHelper;
 import com.example.btl_music4b.Activity.DanhsachbaihatActivity;
 import com.example.btl_music4b.Activity.PlayNhacActivity;
 import com.example.btl_music4b.Model.NgheSi;

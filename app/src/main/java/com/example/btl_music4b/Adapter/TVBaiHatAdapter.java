@@ -13,41 +13,36 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.example.btl_music4b.Activity.DanhsachbaihatActivity;
-import com.example.btl_music4b.Activity.HomeActivity;
 import com.example.btl_music4b.Activity.PlayNhacActivity;
-import com.example.btl_music4b.Fragment.Fragment_ThuVien_BaiHat;
+import com.example.btl_music4b.Activity.ThuVienActivity;
 import com.example.btl_music4b.Model.ThuVienBaiHat;
 import com.example.btl_music4b.R;
 import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
 
-public class ThuVienBaiHatAdapter extends RecyclerView.Adapter<ThuVienBaiHatAdapter.ViewHolder> {
-
-
-    private HomeActivity context;
+public class TVBaiHatAdapter extends RecyclerView.Adapter<TVBaiHatAdapter.ViewHolder> {
+    //private Fragment_ThuVien_BaiHat thuvien;
+    private int layout;
+    private ThuVienActivity context;
     ArrayList<ThuVienBaiHat> thuvienbaihat;
     View view;
-
-
-    public ThuVienBaiHatAdapter(HomeActivity context, ArrayList<ThuVienBaiHat> thuvienbaihat) {
+    public TVBaiHatAdapter(ThuVienActivity context,int layout, ArrayList<ThuVienBaiHat> thuvienbaihat) {
         this.context = context;
+        this.layout = layout;
         this.thuvienbaihat = thuvienbaihat;
 
     }
     @NonNull
     @Override
-    public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+    public TVBaiHatAdapter.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         LayoutInflater inflater = LayoutInflater.from(context);
         view = inflater.inflate(R.layout.dong_thuvien_baihat,parent, false);
-        return new ViewHolder(view);
+        return new TVBaiHatAdapter.ViewHolder(view);
     }
 
-
-
-
-    public void onBindViewHolder(@NonNull final ViewHolder holder, final int position) {
+    @Override
+    public void onBindViewHolder(@NonNull TVBaiHatAdapter.ViewHolder holder, final int position) {
         final ThuVienBaiHat thuVienBaiHat = thuvienbaihat.get(position);
         holder.txtbaihat.setText(thuVienBaiHat.getTenBaiHat());
         Picasso.with(context).load(thuVienBaiHat.getHinhBaiHat()).into(holder.imghinhbaihat);
@@ -87,9 +82,6 @@ public class ThuVienBaiHatAdapter extends RecyclerView.Adapter<ThuVienBaiHatAdap
 
 
     }
-
-
-
     @Override
     public int getItemCount() {
         if(thuvienbaihat != null) {
@@ -98,7 +90,7 @@ public class ThuVienBaiHatAdapter extends RecyclerView.Adapter<ThuVienBaiHatAdap
         return 0;
     }
 
-    public class ViewHolder extends RecyclerView.ViewHolder {
+    public class ViewHolder extends RecyclerView.ViewHolder{
         de.hdodenhof.circleimageview.CircleImageView imghinhbaihat;
         TextView txtbaihat;
         private LinearLayout layout_deletebaihat;

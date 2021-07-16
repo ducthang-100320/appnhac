@@ -6,23 +6,13 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
-import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
 import android.graphics.Color;
-import android.graphics.drawable.BitmapDrawable;
-import android.media.MediaPlayer;
-import android.os.Build;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toast;
-import android.widget.Toolbar;
 
 import com.example.btl_music4b.Adapter.DanhsachbaihatAdapter;
-import com.example.btl_music4b.Adapter.ThuVienBaiHatAdapter;
-import com.example.btl_music4b.Fragment.Fragment_ThuVien_BaiHat;
 import com.example.btl_music4b.Model.BaiHat;
 import com.example.btl_music4b.Model.BangXepHang;
 import com.example.btl_music4b.Model.ChuDe;
@@ -38,9 +28,6 @@ import com.google.android.material.appbar.CollapsingToolbarLayout;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.squareup.picasso.Picasso;
 
-import java.io.IOException;
-import java.net.MalformedURLException;
-import java.net.URL;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -67,7 +54,7 @@ public class DanhsachbaihatActivity extends AppCompatActivity {
     ArrayList<ThuVienBaiHat> thuvienbaihat;
 
     DanhsachbaihatAdapter danhsachbaihatAdapter;
-    ThuVienBaiHatAdapter thuVienBaiHatAdapter;
+    //ThuVienBaiHatAdapter thuVienBaiHatAdapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
