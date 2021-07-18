@@ -16,7 +16,7 @@ import java.util.Iterator;
 public class BaiHat implements Parcelable{
     @SerializedName("IdBaiHat")
     @Expose
-    private String idBaiHat;
+    private int idBaiHat;
     @SerializedName("TenBaiHat")
     @Expose
     private String tenBaiHat;
@@ -33,7 +33,7 @@ public class BaiHat implements Parcelable{
     @Expose
     private String luotThich;
 
-    public BaiHat(String idBaiHat, String tenBaiHat, String hinhBaiHat, String tenCaSi, String linkBaiHat, String luotThich) {
+    public BaiHat(int idBaiHat, String tenBaiHat, String hinhBaiHat, String tenCaSi, String linkBaiHat, String luotThich) {
         this.idBaiHat = idBaiHat;
         this.tenBaiHat = tenBaiHat;
         this.hinhBaiHat = hinhBaiHat;
@@ -44,7 +44,7 @@ public class BaiHat implements Parcelable{
 
 
     protected BaiHat(Parcel in) {
-        idBaiHat = in.readString();
+        idBaiHat = in.readInt();
         tenBaiHat = in.readString();
         hinhBaiHat = in.readString();
         tenCaSi = in.readString();
@@ -64,11 +64,11 @@ public class BaiHat implements Parcelable{
         }
     };
 
-    public String getIdBaiHat() {
+    public int getIdBaiHat() {
         return idBaiHat;
     }
 
-    public void setIdBaiHat(String idBaiHat) {
+    public void setIdBaiHat(int idBaiHat) {
         this.idBaiHat = idBaiHat;
     }
 
@@ -120,7 +120,7 @@ public class BaiHat implements Parcelable{
 
     @Override
     public void writeToParcel(Parcel parcel, int i) {
-        parcel.writeString(idBaiHat);
+        parcel.writeInt(idBaiHat);
         parcel.writeString(tenBaiHat);
         parcel.writeString(hinhBaiHat);
         parcel.writeString(tenCaSi);

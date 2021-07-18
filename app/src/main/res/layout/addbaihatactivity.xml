@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:padding="20dp"
+    android:gravity="center|top"
+    android:background="@android:color/holo_blue_bright"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <TextView
+        android:layout_marginTop="40dp"
+        android:textColor="@android:color/holo_red_light"
+        android:textSize="30sp"
+        android:textStyle="bold"
+        android:text="Thêm mới bài hát"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+    </TextView>
+    <EditText
+        android:hint="Nhập tên bài hát"
+        android:id="@+id/edtTenBaiHat"
+        android:layout_marginTop="20dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+    </EditText>
+    <EditText
+        android:hint="Nhập hình bài hát"
+        android:id="@+id/edtHinhBaiHat"
+        android:layout_marginTop="20dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+    </EditText>
+
+    <EditText
+        android:hint="Nhập link bài hát"
+        android:id="@+id/edtLinkBaiHat"
+        android:layout_marginTop="20dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+    </EditText>
+    <EditText
+        android:hint="Nhập tên ca sĩ"
+        android:id="@+id/edtTenCaSi"
+        android:layout_marginTop="20dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+    </EditText>
+    <LinearLayout
+        android:layout_marginTop="20dp"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <Button
+            android:onClick="addItem"
+            android:layout_weight="1"
+            android:id="@+id/btnAdd"
+            android:text="Add"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"></Button>
+
+        <Button
+            android:onClick="cancel"
+            android:layout_weight="1"
+            android:id="@+id/btnCancel"
+            android:text="Cancel"
+            android:layout_marginLeft="20dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"></Button>
+    </LinearLayout>
+
+</LinearLayout>

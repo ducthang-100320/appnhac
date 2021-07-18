@@ -1,7 +1,6 @@
 package com.example.btl_music4b.Adapter;
 
 import android.app.AlertDialog;
-import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.view.LayoutInflater;
@@ -14,10 +13,8 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.btl_music4b.Activity.DanhsachbaihatActivity;
-import com.example.btl_music4b.Activity.MainActivity;
+import com.example.btl_music4b.Activity.HomeActivity;
 import com.example.btl_music4b.Activity.PlayNhacActivity;
-import com.example.btl_music4b.Fragment.Fragment_ThuVien_BaiHat;
-import com.example.btl_music4b.Model.BaiHat;
 import com.example.btl_music4b.Model.ThuVienBaiHat;
 import com.example.btl_music4b.R;
 import com.squareup.picasso.Picasso;
@@ -25,43 +22,37 @@ import com.squareup.picasso.Picasso;
 import java.util.ArrayList;
 
 public class ThuVienBaiHatAdapter extends RecyclerView.Adapter<ThuVienBaiHatAdapter.ViewHolder> {
-    private Fragment_ThuVien_BaiHat thuvien = new Fragment_ThuVien_BaiHat();
-    Context context;
+
+
+    private HomeActivity context;
     ArrayList<ThuVienBaiHat> thuvienbaihat;
     View view;
 
-    public ThuVienBaiHatAdapter(Context context, ArrayList<ThuVienBaiHat> thuvienbaihat) {
+
+    public ThuVienBaiHatAdapter(HomeActivity context, ArrayList<ThuVienBaiHat> thuvienbaihat) {
         this.context = context;
         this.thuvienbaihat = thuvienbaihat;
 
     }
-
-//    public ThuVienBaiHatAdapter(Fragment_ThuVien_BaiHat thuvien, Context context, ArrayList<ThuVienBaiHat> thuvienbaihat, View view) {
-//        this.thuvien = thuvien;
-//        this.context = context;
-//        this.thuvienbaihat = thuvienbaihat;
-//        this.view = view;
-//    }
-
     @NonNull
     @Override
-    public ThuVienBaiHatAdapter.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+    public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         LayoutInflater inflater = LayoutInflater.from(context);
         view = inflater.inflate(R.layout.dong_thuvien_baihat,parent, false);
-        return new ThuVienBaiHatAdapter.ViewHolder(view);
+        return new ViewHolder(view);
     }
 
 
 
 
-    public void onBindViewHolder(@NonNull final ThuVienBaiHatAdapter.ViewHolder holder, final int position) {
+    public void onBindViewHolder(@NonNull final ViewHolder holder, final int position) {
         final ThuVienBaiHat thuVienBaiHat = thuvienbaihat.get(position);
         holder.txtbaihat.setText(thuVienBaiHat.getTenBaiHat());
         Picasso.with(context).load(thuVienBaiHat.getHinhBaiHat()).into(holder.imghinhbaihat);
         view.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(context, PlayNhacActivity.class);
+                Intent intent = new Intent(context, DanhsachbaihatActivity.class);
                 intent.putExtra("intentthuvien", thuvienbaihat.get(position));
                 context.startActivity(intent);
             }
@@ -70,6 +61,7 @@ public class ThuVienBaiHatAdapter extends RecyclerView.Adapter<ThuVienBaiHatAdap
             @Override
             public void onClick(View v) {
                 confirmDelete(thuVienBaiHat.getTenBaiHat(),thuVienBaiHat.getID());
+
             }
         });
     }
@@ -81,7 +73,7 @@ public class ThuVienBaiHatAdapter extends RecyclerView.Adapter<ThuVienBaiHatAdap
         builder.setPositiveButton("Có", new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int which) {
-                thuvien.deleteItem(ID);
+                context.deleteItem(ID);
             }
         });
         builder.setNegativeButton("Không", new DialogInterface.OnClickListener() {
@@ -114,6 +106,14 @@ public class ThuVienBaiHatAdapter extends RecyclerView.Adapter<ThuVienBaiHatAdap
             imghinhbaihat = itemView.findViewById(R.id.imageviewthuvienbaihat);
             txtbaihat = itemView.findViewById(R.id.textviewthuvienbaihat);
             layout_deletebaihat = itemView.findViewById(R.id.layout_deletebaihat);
+            itemView.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    Intent intent = new Intent(context, PlayNhacActivity.class);
+                    intent.putExtra("intentthuvien", thuvienbaihat.get(getPosition()));
+                    context.startActivity(intent);
+                }
+            });
         }
     }
 }
