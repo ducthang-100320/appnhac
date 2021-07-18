@@ -69,7 +69,7 @@ public class TimKiemAdapter extends RecyclerView.Adapter<TimKiemAdapter.ViewHold
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(context,AddBaiHatActivity.class);
-                intent.putExtra("studentEdit",baiHat);
+                intent.putExtra("addBaiHat",baiHat);
                 context.startActivity(intent);
 
             }

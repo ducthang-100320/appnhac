@@ -136,8 +136,8 @@ public class HomeActivity extends AppCompatActivity{
                     @Override
                     public void onResponse(String response) {
                         if(response.equals("Success")){
-                            Toast.makeText(HomeActivity.this, "Xóa Thành Công", Toast.LENGTH_SHORT).show();
-                            GetData();
+                            Toast.makeText(HomeActivity.this, "Xóa thành công bài hát khỏi thư viện", Toast.LENGTH_LONG).show();
+//                            GetData();
                         }
                         else {
 

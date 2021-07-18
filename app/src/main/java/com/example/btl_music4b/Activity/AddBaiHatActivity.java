@@ -40,24 +40,17 @@ public class AddBaiHatActivity extends AppCompatActivity implements View.OnClick
         btnAdd.setOnClickListener( this);
         btnCancel.setOnClickListener(this);
         Intent intent = getIntent();
-        BaiHat baiHat = (BaiHat) intent.getParcelableExtra("studentEdit");
-        //int ID = baiHat.getIdBaiHat();
+        BaiHat baiHat = (BaiHat) intent.getParcelableExtra("addBaiHat");
         if(baiHat.getTenBaiHat() == null){
             edtTenBaiHat.setText("abc");
         }
 
         edtTenBaiHat.setText(baiHat.getTenBaiHat());
-        Toast.makeText(this, "Bài Hát" +baiHat.getTenBaiHat(), Toast.LENGTH_LONG).show();
         edtHinhBaiHat.setText(baiHat.getHinhBaiHat());
         edtLinkBaiHat.setText(baiHat.getLinkBaiHat());
         edtTenCaSi.setText(baiHat.getTenCaSi());
         idEdit = baiHat.getIdBaiHat();
     }
-
-
-
-
-
     public void onClick(View v) {
         switch (v.getId()){
             case R.id.btnAdd :

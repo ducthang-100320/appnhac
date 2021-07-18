@@ -42,7 +42,7 @@ public class ThuVienBaiHatAdapter extends RecyclerView.Adapter<ThuVienBaiHatAdap
         return new ViewHolder(view);
     }
 
-
+// Coment
 
 
     public void onBindViewHolder(@NonNull final ViewHolder holder, final int position) {
