@@ -78,7 +78,4 @@ public class Fragment_ThuVien_BaiHat extends Fragment {
 
         });
     }
-
-
-
 }

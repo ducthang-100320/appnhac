@@ -6,6 +6,7 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -41,24 +42,38 @@ public class DanhsachbaihatAdapter extends RecyclerView.Adapter<DanhsachbaihatAd
 
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
+        EditText edtTenBaiHat,edtHinhBaiHat,edtLinkBaiHat,edtTenCaSi;
         BaiHat baiHat = mangbaihat.get(position);
         holder.txttenbaihat.setText(baiHat.getTenBaiHat());
         holder.txttencasi.setText(baiHat.getTenCaSi());
+        holder.edtTenBaiHat.setText(baiHat.getTenBaiHat());
+        holder.edtHinhBaiHat.setText(baiHat.getHinhBaiHat());
+        holder.edtLinkBaiHat.setText(baiHat.getLinkBaiHat());
+        holder.edtTenCaSi.setText(baiHat.getTenCaSi());
+
         Picasso.with(context).load(baiHat.getHinhBaiHat()).into(holder.hinhbaihat);
     }
+
 
     @Override
     public int getItemCount() {
         return mangbaihat.size();
     }
 
+
+
     public class ViewHolder extends RecyclerView.ViewHolder{
         TextView txttenbaihat, txttencasi;
+        EditText edtTenBaiHat,edtHinhBaiHat,edtLinkBaiHat,edtTenCaSi;
         ImageView hinhbaihat, tim;
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
             txttenbaihat = itemView.findViewById(R.id.textViewtenbaihat);
             txttencasi = itemView.findViewById(R.id.textViewtencasi);
+            edtTenBaiHat = itemView.findViewById(R.id.edtTenBaiHat);
+            edtHinhBaiHat = itemView.findViewById(R.id.edtHinhBaiHat);
+            edtLinkBaiHat = itemView.findViewById(R.id.edtLinkBaiHat);
+            edtTenCaSi = itemView.findViewById(R.id.edtTenCaSi);
             hinhbaihat = itemView.findViewById(R.id.imageViewhinhbaihat);
             tim = itemView.findViewById(R.id.imageViewtimdanhsachbaihat);
 

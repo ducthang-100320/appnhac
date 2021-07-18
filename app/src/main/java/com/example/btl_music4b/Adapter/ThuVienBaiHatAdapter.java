@@ -1,7 +1,6 @@
 package com.example.btl_music4b.Adapter;
 
 import android.app.AlertDialog;
-import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.view.LayoutInflater;
@@ -16,7 +15,6 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.example.btl_music4b.Activity.DanhsachbaihatActivity;
 import com.example.btl_music4b.Activity.HomeActivity;
 import com.example.btl_music4b.Activity.PlayNhacActivity;
-import com.example.btl_music4b.Fragment.Fragment_ThuVien_BaiHat;
 import com.example.btl_music4b.Model.ThuVienBaiHat;
 import com.example.btl_music4b.R;
 import com.squareup.picasso.Picasso;
@@ -54,7 +52,7 @@ public class ThuVienBaiHatAdapter extends RecyclerView.Adapter<ThuVienBaiHatAdap
         view.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(context, PlayNhacActivity.class);
+                Intent intent = new Intent(context, DanhsachbaihatActivity.class);
                 intent.putExtra("intentthuvien", thuvienbaihat.get(position));
                 context.startActivity(intent);
             }
@@ -63,6 +61,7 @@ public class ThuVienBaiHatAdapter extends RecyclerView.Adapter<ThuVienBaiHatAdap
             @Override
             public void onClick(View v) {
                 confirmDelete(thuVienBaiHat.getTenBaiHat(),thuVienBaiHat.getID());
+
             }
         });
     }
@@ -111,7 +110,7 @@ public class ThuVienBaiHatAdapter extends RecyclerView.Adapter<ThuVienBaiHatAdap
                 @Override
                 public void onClick(View view) {
                     Intent intent = new Intent(context, PlayNhacActivity.class);
-                    intent.putExtra("cakhuc", thuvienbaihat.get(getPosition()));
+                    intent.putExtra("intentthuvien", thuvienbaihat.get(getPosition()));
                     context.startActivity(intent);
                 }
             });

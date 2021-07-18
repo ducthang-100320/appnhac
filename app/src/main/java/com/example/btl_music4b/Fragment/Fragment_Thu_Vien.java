@@ -32,7 +32,6 @@ public class Fragment_Thu_Vien extends Fragment {
         viewPagerThuVien.addFragment(new Fragment_ThuVien_Playlist(), "Playlist");
         viewPagerThuVien.addFragment(new Fragment_ThuVien_NgheSi(), "Nghệ sĩ");
         viewPagerThuVien.addFragment(new Fragment_ThuVien_BaiHat(), "Bài Hát");
-        //viewPagerThuVien.addFragment(new Fragment_Test(), "Test");
         viewPager.setAdapter(viewPagerThuVien);
         tabLayout.setupWithViewPager(viewPager);
     }

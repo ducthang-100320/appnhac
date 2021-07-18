@@ -13,6 +13,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.example.btl_music4b.Adapter.DanhsachbaihatAdapter;
+import com.example.btl_music4b.Adapter.ThuVienBaiHatAdapter;
 import com.example.btl_music4b.Model.BaiHat;
 import com.example.btl_music4b.Model.BangXepHang;
 import com.example.btl_music4b.Model.ChuDe;
@@ -52,9 +53,8 @@ public class DanhsachbaihatActivity extends AppCompatActivity {
     ImageView imgdanhsachcakhuc;
     ArrayList<BaiHat> mangbaihat;
     ArrayList<ThuVienBaiHat> thuvienbaihat;
-
     DanhsachbaihatAdapter danhsachbaihatAdapter;
-    //ThuVienBaiHatAdapter thuVienBaiHatAdapter;
+    ThuVienBaiHatAdapter thuVienBaiHatAdapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -206,7 +206,7 @@ public class DanhsachbaihatActivity extends AppCompatActivity {
 //            @Override
 //            public void onResponse(Call<List<ThuVienBaiHat>> call, Response<List<ThuVienBaiHat>> response) {
 //                thuvienbaihat = (ArrayList<ThuVienBaiHat>) response.body();
-//                thuVienBaiHatAdapter = new ThuVienBaiHatAdapter(DanhsachbaihatActivity.this, thuvienbaihat);
+//                thuVienBaiHatAdapter = new ThuVienBaiHatAdapter(HomeActivity.this, thuvienbaihat);
 //                recyclerViewdanhsachbaihat.setLayoutManager(new LinearLayoutManager(DanhsachbaihatActivity.this));
 //                recyclerViewdanhsachbaihat.setAdapter(thuVienBaiHatAdapter);
 //            }
